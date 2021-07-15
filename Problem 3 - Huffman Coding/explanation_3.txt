@@ -1,0 +1,9 @@
+Problem 3
+Huffman Coding
+
+In order to build the Huffman tree, I looped through the entire data and store the characters and their number of occurence in a dictionary for quick access.
+I also made use of the inbuilt Python Priority Queue which uses a binary heap underneath the hood. This allows me to retrieve the nodes with the lowest frequency
+when building the Huffman tree.
+
+Time Complexity : O(n) - This is as a result of looping through the entire data to create the required Huffman tree
+Space Complexity : O(n) - This is as a result of storing the entire data in the dictionary, look up table and Priority queue.

@@ -1,0 +1,8 @@
+Problem 4
+Active directory
+
+In this problem, I recursively searched the user list of each group. If the user was not found in the parent group then I go into the sub group and search it's list of users
+and return true when a match is found and false if all groups and sub groups have been searched and the user is still not found.
+
+Time Complexity : O(nm) - n is the number of users in group and m is number of sub groups
+Space Complexity :O(n+m) - n is size of groups and m the size of the users list in each group

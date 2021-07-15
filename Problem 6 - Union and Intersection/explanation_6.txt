@@ -1,0 +1,10 @@
+Problem 6
+Union and Intersection
+
+In both union and intersect methods I used a set to ensure there were no duplicates in the final result. 
+In the case of union, the set served to ensure that if both list contained the same value e.g 2, only one of this will be printed.
+In the case of intersection it was used to ensure that only items that existed in both list were added to the final result by providing a constant lookup while
+traversing the second list. If the value existed in the set and the second list then it was added to the intersection result.
+
+Time Complexity : O(n + m) - Both list had to be traversed. n is size of list 1 and m is size of list 2.
+Space Complexity: O(n + m) - The space consumed by both list. n is size of list 1 and m is size of list 2.

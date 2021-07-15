@@ -43,6 +43,10 @@ class LinkedList:
 
 def union(llist_1, llist_2):
     # Your Solution Here
+    if llist_1.head is None and llist_2.head is None:
+        print('No operation performed. Both Lists are empty')
+        return
+
     result = LinkedList()
     uniqueSet = set()
     if llist_1 is not None:
@@ -65,6 +69,10 @@ def union(llist_1, llist_2):
 
 def intersection(llist_1, llist_2):
     # Your Solution Here
+    if llist_1.head is None and llist_2.head is None:
+        print('No operation performed. Both Lists are empty')
+        return
+
     result = LinkedList()
     uniqueSet = set()
     if llist_1 is not None:
@@ -85,12 +93,28 @@ def intersection(llist_1, llist_2):
     return result
 
 
-# Test case 1
+#Edge Test case 
 
 linked_list_1 = LinkedList()
 linked_list_2 = LinkedList()
 
-element_1 = [3,2,4,35,6,65,6,4,3,21]
+element_1 = []
+element_2 = []
+
+for i in element_1:
+    linked_list_1.append(i)
+
+for i in element_2:
+    linked_list_2.append(i)
+
+print (union(linked_list_1,linked_list_2)) # No operation performed. Both Lists are empty
+print (intersection(linked_list_1,linked_list_2))# No operation performed. Both Lists are empty
+
+
+linked_list_1 = LinkedList()
+linked_list_2 = LinkedList()
+
+element_1 = []
 element_2 = [6,32,4,9,6,1,11,21,1]
 
 for i in element_1:
@@ -99,10 +123,10 @@ for i in element_1:
 for i in element_2:
     linked_list_2.append(i)
 
-print (union(linked_list_1,linked_list_2))
-print (intersection(linked_list_1,linked_list_2))
+print (union(linked_list_1,linked_list_2)) # 6 -> 32 -> 4 -> 9 -> 1 -> 11 -> 21 ->
+print (intersection(linked_list_1,linked_list_2)) #6 -> 32 -> 4 -> 9 -> 1 -> 11 -> 21 ->
 
-# Test case 2
+# general test case
 
 linked_list_3 = LinkedList()
 linked_list_4 = LinkedList()

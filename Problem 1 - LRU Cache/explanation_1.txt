@@ -1,0 +1,13 @@
+Problem 1
+LRU Cache
+
+The get and set operation of my LRU cache are O(1). In order to achieve this, all keys in the cache are stored in a dictionary
+which facilitates access in constant time. Secondly, I implemented a queue using a doubly linked list so, that I can insert and delete
+nodes in constant time. This is required when trying to add a new node after a cache miss and promote it as the most recently used item in the cache
+or when trying to promote a node as the most recently used item after it has been successfully retrieved in a cache hit.
+
+The constant additition and promotion of recently accessed node to the front of the queue ensures that the least recently used items/nodes are at the
+ end of the queue and readily available for eviction when the cache is full in order to make room for a new node or data.
+
+ Time Complexity : O(1)
+ Space Complexity : O(n) - This is due to the queue and dictionary used in storing data

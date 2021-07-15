@@ -1,0 +1,9 @@
+Problem 5
+Block Chain
+
+while I implemented the block chain with some additional methods like search,remove, insert, and append which all have O(n) Complexity,
+it is still possible to create a block chain using the prepend method in O(1) and also remove blocks
+using the pop method in O(1)
+
+Time Complexity: O(1) for append and pop
+Space Complexity : O(n)

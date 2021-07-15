@@ -140,13 +140,6 @@ class BlockChain:
             out.append(block.data)
             block = block.next
         return out
-    def to_list2(self):
-        out = []
-        block = self.head
-        while block:
-            out.append(block.data + " ,hash - " + block.hash + " ,previous hash - " + block.previous_hash)
-            block = block.next
-        return out
 
 # Test prepend
 block_chain = BlockChain()
@@ -154,16 +147,10 @@ block_chain.prepend("1")
 block_chain.prepend("2")
 assert block_chain.to_list() == ["2","1"], f"list contents: {block_chain.to_list()}"
 
-print(block_chain.to_list())
-print(block_chain.to_list2())
-
 block_chain = BlockChain()
 block_chain.append("1")
 block_chain.append("2")
 assert block_chain.to_list() == ["1","2"], f"list contents: {block_chain.to_list()}"
-
-print(block_chain.to_list())
-print(block_chain.to_list2())
 
 block_chain = BlockChain()
 block_chain.append("1")
@@ -172,11 +159,6 @@ block_chain.append("2")
 block_chain.insert("3", 1)
 assert block_chain.to_list() == ["1","3","2"], f"list contents: {block_chain.to_list()}"
 
-print(block_chain.to_list())
-print(block_chain.to_list2())
 
 block_chain.remove("3")
 assert block_chain.to_list() == ["1","2"], f"list contents: {block_chain.to_list()}"
-
-print(block_chain.to_list())
-print(block_chain.to_list2())

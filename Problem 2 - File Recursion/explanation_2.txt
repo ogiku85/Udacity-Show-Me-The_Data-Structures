@@ -1,0 +1,7 @@
+Problem 2
+File Recursion
+
+In this I recursively check every directory and inspect the file name looking for a match with the specified suffix.
+
+Time Complexity : O(nd) - n is the number of directories and d is the number of sub directories
+Space Complexity : O(n + l) n is the size of the result list ie found files and l is the size of the list of the current directory
