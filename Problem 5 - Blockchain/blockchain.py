@@ -19,6 +19,14 @@ class Block:
 
       return sha.hexdigest()
 
+    def __repr__(self):
+        s = ''
+        s += "Timestamp: " + str(self.timestamp.strftime("%H:%M:%S %m/%d/%y")) + "\n"
+        s += "Data: " + self.data + "\n"
+        s += "SHA256 Hash: " + str(self.hash) + "\n"
+        s += "Prev_Hash: " + str(self.previous_hash) + "\n"
+        return s
+
 class BlockChain:
     def __init__(self):
         self.head = None
@@ -141,16 +149,38 @@ class BlockChain:
             block = block.next
         return out
 
+    def __repr__(self):
+
+        # Edge case
+        if self.head is None:
+            return "Blockchain is empty"
+
+        s = ''
+        current_block = self.head
+        count = 0
+        while current_block is not None:
+            s += 'Block ' + str(count) + '\n'
+            s += str(current_block) + '\n'
+
+            current_block = current_block.next
+            count += 1
+        return s
+#Edge case Test
+block_chain = BlockChain()
+print(block_chain) #Blockchain is empty
+
 # Test prepend
 block_chain = BlockChain()
 block_chain.prepend("1")
 block_chain.prepend("2")
 assert block_chain.to_list() == ["2","1"], f"list contents: {block_chain.to_list()}"
+print(block_chain)
 
 block_chain = BlockChain()
 block_chain.append("1")
 block_chain.append("2")
 assert block_chain.to_list() == ["1","2"], f"list contents: {block_chain.to_list()}"
+print(block_chain)
 
 block_chain = BlockChain()
 block_chain.append("1")
@@ -158,6 +188,7 @@ block_chain.append("2")
 
 block_chain.insert("3", 1)
 assert block_chain.to_list() == ["1","3","2"], f"list contents: {block_chain.to_list()}"
+print(block_chain)
 
 
 block_chain.remove("3")
