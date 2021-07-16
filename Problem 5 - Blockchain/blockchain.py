@@ -25,6 +25,7 @@ class Block:
         s += "Data: " + self.data + "\n"
         s += "SHA256 Hash: " + str(self.hash) + "\n"
         s += "Prev_Hash: " + str(self.previous_hash) + "\n"
+        s += "------------------------------------------------------------------"
         return s
 
 class BlockChain:
